@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 
-import questionName from "../src/cli.js";
-
+import questionName from '../src/cli.js';
 
 const app = () => {
-    console.log('Welcome to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
 
-    questionName();
+  questionName();
 };
 
 app();
