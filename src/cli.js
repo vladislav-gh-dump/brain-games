@@ -1,7 +1,8 @@
 import readlineSync from 'readline-sync';
 
-export default (questionText) => {
-  const answer = readlineSync.question(questionText);
+export default () => {
+  console.log('Welcome to the Brain Games!');
 
-  return answer;
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}`);
 };
