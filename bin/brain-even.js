@@ -11,38 +11,58 @@ const getRandomNumber = () => {
 
 const checkEvenNumber = (number) => number % 2 === 0;
 
-const app = () => {
-  console.log('Welcome to the Brain Games!');
+const getCorrectAnswer = (number) => {
+  const isEvenNumber = checkEvenNumber(number);
 
+  let correctAnswer = 'no';
+  if (isEvenNumber) {
+    correctAnswer = 'yes';
+  }
+
+  return correctAnswer;
+};
+
+const gameRound = () => {
+  const randomNumber = getRandomNumber();
+  const correctAnswer = getCorrectAnswer(randomNumber);
+  console.log(`Question: ${randomNumber}`);
+
+  const userAnswer = question('Your answer: ');
+  if (userAnswer === correctAnswer) {
+    console.log('Correct!');
+    return true;
+  }
+
+  console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+  return false;
+};
+
+const askUserName = () => {
   const name = question('May I have your name? ');
   console.log(`Hello, ${name}`);
 
+  return name;
+};
+
+const app = () => {
+  console.log('Welcome to the Brain Games!');
+
+  const userName = askUserName();
+
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  let countCorrectAnswers = 0;
-  while (countCorrectAnswers !== 3) {
-    const randomNumber = getRandomNumber();
-    console.log(`Question: ${randomNumber}`);
+  let countGameRounds = 0;
+  while (countGameRounds !== 3) {
+    const isWinRound = gameRound();
 
-    const answer = question('Your answer: ');
-    const isEvenNumber = checkEvenNumber(randomNumber);
-
-    let correctAnswer = 'yes';
-    if (isEvenNumber === false) {
-      correctAnswer = 'no';
+    if (!isWinRound) {
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
-
-    if (answer === correctAnswer) {
-      countCorrectAnswers += 1;
-      console.log('Correct!');
-    } else {
-      countCorrectAnswers = 0;
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      console.log(`Let's try again, ${name}!`);
-    }
+    countGameRounds += 1;
   }
 
-  console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 app();
