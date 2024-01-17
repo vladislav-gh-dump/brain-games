@@ -2,10 +2,10 @@ import game from '../src/index.js';
 
 const getRandomNumber = (maxNumber) => Math.floor(Math.random() * (maxNumber + 1));
 
-const signs = ['+', '-', '*'];
+const chooseRandom = (list) => list[getRandomNumber(list.length - 1)];
 
-const getCorrectAnswer = (number1, number2, sign) => {
-  switch (sign) {
+const calc = (number1, number2, operator) => {
+  switch (operator) {
     case '+':
       return `${number1 + number2}`;
     case '-':
@@ -17,17 +17,17 @@ const getCorrectAnswer = (number1, number2, sign) => {
   }
 };
 
-const getRoundProperties = () => {
-  const randomNumber1 = getRandomNumber(50);
-  const randomNumber2 = getRandomNumber(50);
-  const randomSign = signs[getRandomNumber(2)];
+const generateRoundProperties = () => {
+  const number1 = getRandomNumber(50);
+  const number2 = getRandomNumber(50);
+  const operator = chooseRandom(['+', '-', '*']);
 
-  const correctAnswer = getCorrectAnswer(randomNumber1, randomNumber2, randomSign);
-  const question = `${randomNumber1} ${randomSign} ${randomNumber2}`;
-
-  return { question, correctAnswer };
+  return {
+    question: `${number1} ${operator} ${number2}`,
+    correctAnswer: calc(number1, number2, operator),
+  };
 };
 
 export default () => {
-  game('What is the result of the expression?', getRoundProperties);
+  game('What is the result of the expression?', generateRoundProperties);
 };
