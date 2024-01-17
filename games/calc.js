@@ -18,8 +18,8 @@ const calc = (number1, number2, operator) => {
 };
 
 const generateRoundProperties = () => {
-  const number1 = getRandomNumber(50);
-  const number2 = getRandomNumber(50);
+  const number1 = getRandomNumber(10);
+  const number2 = getRandomNumber(10);
   const operator = chooseRandom(['+', '-', '*']);
 
   return {
