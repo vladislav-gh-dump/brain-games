@@ -30,5 +30,5 @@ const generateRoundProperties = () => {
 };
 
 export default () => {
-  game('Find the greatest common divisor of given numbers.', generateRoundProperties);
+  game('What number is missing in the progression?', generateRoundProperties);
 };
