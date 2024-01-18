@@ -9,3 +9,6 @@ url: https://asciinema.org/a/orq1RK9LJV4J58J0fo5HvmDHu
 
 ### asciinema brain-gcd
 url: https://asciinema.org/a/JJWUbAK7rDvEzag9z0NEl0jjR
+
+### asciinema brain-progression
+url: https://asciinema.org/a/WJnGEo0AoFRMNLWNjKyfnwwIJ
