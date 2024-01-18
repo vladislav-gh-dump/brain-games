@@ -7,11 +7,11 @@ const chooseRandom = (list) => list[getRandomNumber(list.length - 1)];
 const calc = (number1, number2, operator) => {
   switch (operator) {
     case '+':
-      return `${number1 + number2}`;
+      return number1 + number2;
     case '-':
-      return `${number1 - number2}`;
+      return number1 - number2;
     case '*':
-      return `${number1 * number2}`;
+      return number1 * number2;
     default:
       return null;
   }
@@ -24,7 +24,7 @@ const generateRoundProperties = () => {
 
   return {
     question: `${number1} ${operator} ${number2}`,
-    correctAnswer: calc(number1, number2, operator),
+    correctAnswer: `${calc(number1, number2, operator)}`,
   };
 };
 
