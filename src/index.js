@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export default (textRules, generateRoundProperties) => {
+export default (textRules, roundProperties) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
@@ -10,14 +10,13 @@ export default (textRules, generateRoundProperties) => {
 
   let countRounds = 0;
   while (countRounds !== 3) {
-    const roundProperties = generateRoundProperties();
-    const { question, correctAnswer } = roundProperties;
+    const { question, correctAnswer } = roundProperties();
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (correctAnswer !== userAnswer) {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }

@@ -1,18 +1,24 @@
 import game from '../src/index.js';
 
-const getRandomNumber = (maxNumber) => Math.floor(Math.random() * (maxNumber + 1));
+const getRandomNumber = (limitNumber) => {
+  const inclusiveLimitNumber = limitNumber + 1;
+  const randomNumber = Math.random() * inclusiveLimitNumber;
+  const roundDownNumber = Math.floor(randomNumber);
 
-const isEvenNumber = (number) => number % 2 === 0;
+  return roundDownNumber;
+};
 
-const generateRoundProperties = () => {
+const isEvenNumber = (number) => (number % 2 === 0);
+
+const roundProperties = () => {
   const number = getRandomNumber(50);
 
-  return {
-    question: number,
-    correctAnswer: isEvenNumber(number) ? 'yes' : 'no',
-  };
+  const question = `${number}`;
+  const correctAnswer = isEvenNumber(number) ? 'yes' : 'no';
+
+  return { question, correctAnswer };
 };
 
 export default () => {
-  game('Answer "yes" if the number is even, otherwise answer "no".', generateRoundProperties);
+  game('Answer "yes" if the number is even, otherwise answer "no".', roundProperties);
 };

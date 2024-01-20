@@ -1,34 +1,40 @@
 import game from '../src/index.js';
 
-const getRandomNumber = (maxNumber) => Math.floor(Math.random() * (maxNumber + 1));
+const getRandomNumber = (limitNumber) => {
+  const inclusiveLimitNumber = limitNumber + 1;
+  const randomNumber = Math.random() * inclusiveLimitNumber;
+  const roundDownNumber = Math.floor(randomNumber);
 
-const chooseRandomIndex = (list) => getRandomNumber(list.length - 1);
-
-const getProgressionArray = (lengthArray, firstNumber, diffNumber) => {
-  const array = [firstNumber];
-  let progressionNumber = firstNumber;
-  for (let i = 0; i < lengthArray - 1; i += 1) {
-    progressionNumber += diffNumber;
-    array.push(progressionNumber);
-  }
-  return array;
+  return roundDownNumber;
 };
 
-const generateRoundProperties = () => {
+const getProgressionNumbers = (lengthArray, firstNumber, differenceOfNumbers) => {
+  const progressionNumbers = [firstNumber];
+
+  let nextNumber = firstNumber;
+  for (let i = 1; i < lengthArray; i += 1) {
+    nextNumber += differenceOfNumbers;
+    progressionNumbers.push(nextNumber);
+  }
+
+  return progressionNumbers;
+};
+
+const roundProperties = () => {
   const firstNumber = getRandomNumber(30);
-  const diffNumber = getRandomNumber(5);
-  const progressionArray = getProgressionArray(10, firstNumber, diffNumber);
+  const differenceOfNumbers = getRandomNumber(5);
 
-  const randomIndex = chooseRandomIndex(progressionArray);
-  const correctAnswer = `${progressionArray[randomIndex]}`;
-  progressionArray[randomIndex] = '..';
+  const progressionNumbers = getProgressionNumbers(10, firstNumber, differenceOfNumbers);
+  const indexOfMissingNumber = getRandomNumber(progressionNumbers.length - 1);
+  const missingNumber = progressionNumbers[indexOfMissingNumber];
+  progressionNumbers[indexOfMissingNumber] = '..';
 
-  return {
-    question: progressionArray.join(' '),
-    correctAnswer,
-  };
+  const question = progressionNumbers.join(' ');
+  const correctAnswer = `${missingNumber}`;
+
+  return { question, correctAnswer };
 };
 
 export default () => {
-  game('What number is missing in the progression?', generateRoundProperties);
+  game('What number is missing in the progression?', roundProperties);
 };

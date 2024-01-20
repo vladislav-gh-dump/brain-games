@@ -1,25 +1,39 @@
 import game from '../src/index.js';
 
-const getRandomNumber = (maxNumber) => Math.floor(Math.random() * (maxNumber + 1));
+const getRandomNumber = (limitNumber) => {
+  const inclusiveLimitNumber = limitNumber + 1;
+  const randomNumber = Math.random() * inclusiveLimitNumber;
+  const roundDownNumber = Math.floor(randomNumber);
 
-const isPrimeNumber = (number) => {
-  for (let i = 2; i < number; i += 1) {
-    if (number % i === 0) {
-      return 'no';
-    }
-  }
-  return number > 1 ? 'yes' : 'no';
+  return roundDownNumber;
 };
 
-const generateRoundProperties = () => {
-  const number = getRandomNumber(10) + 1;
+const isPrimeNumber = (number) => {
+  const firstNotPrimeNumber = 1;
+  const firstPrimeNumber = 2;
 
-  return {
-    question: number,
-    correctAnswer: `${isPrimeNumber(number)}`,
-  };
+  if (number === firstNotPrimeNumber) {
+    return false;
+  }
+
+  for (let i = firstPrimeNumber; i < number; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const roundProperties = () => {
+  const firstNotPrimeNumber = 1;
+  const number = firstNotPrimeNumber + getRandomNumber(10);
+
+  const question = `${number}`;
+  const correctAnswer = isPrimeNumber(number) ? 'yes' : 'no';
+
+  return { question, correctAnswer };
 };
 
 export default () => {
-  game('Answer "yes" if given number is prime. Otherwise answer "no".', generateRoundProperties);
+  game('Answer "yes" if given number is prime. Otherwise answer "no".', roundProperties);
 };

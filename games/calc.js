@@ -1,33 +1,42 @@
 import game from '../src/index.js';
 
-const getRandomNumber = (maxNumber) => Math.floor(Math.random() * (maxNumber + 1));
+const getRandomNumber = (limitNumber) => {
+  const inclusiveLimitNumber = limitNumber + 1;
+  const randomNumber = Math.random() * inclusiveLimitNumber;
+  const roundDownNumber = Math.floor(randomNumber);
 
-const chooseRandom = (list) => list[getRandomNumber(list.length - 1)];
+  return roundDownNumber;
+};
 
-const calc = (number1, number2, operator) => {
+const doCalculations = (firstNumber, secondNumber, operator) => {
   switch (operator) {
     case '+':
-      return number1 + number2;
+      return firstNumber + secondNumber;
+
     case '-':
-      return number1 - number2;
+      return firstNumber - secondNumber;
+
     case '*':
-      return number1 * number2;
+      return firstNumber * secondNumber;
+
     default:
       return null;
   }
 };
 
-const generateRoundProperties = () => {
-  const number1 = getRandomNumber(10);
-  const number2 = getRandomNumber(10);
-  const operator = chooseRandom(['+', '-', '*']);
+const roundProperties = () => {
+  const firstNumber = getRandomNumber(10);
+  const secondNumber = getRandomNumber(10);
 
-  return {
-    question: `${number1} ${operator} ${number2}`,
-    correctAnswer: `${calc(number1, number2, operator)}`,
-  };
+  const operators = ['+', '-', '*'];
+  const operator = operators[getRandomNumber(operators.length - 1)];
+
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  const correctAnswer = `${doCalculations(firstNumber, secondNumber, operator)}`;
+
+  return { question, correctAnswer };
 };
 
 export default () => {
-  game('What is the result of the expression?', generateRoundProperties);
+  game('What is the result of the expression?', roundProperties);
 };

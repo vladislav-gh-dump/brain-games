@@ -1,20 +1,31 @@
 import game from '../src/index.js';
 
-const getRandomNumber = (maxNumber) => Math.floor(Math.random() * (maxNumber + 1));
+const getRandomNumber = (limitNumber) => {
+  const inclusiveLimitNumber = limitNumber + 1;
+  const randomNumber = Math.random() * inclusiveLimitNumber;
+  const roundDownNumber = Math.floor(randomNumber);
 
-const gcd = (number1, number2) => ((!number2) ? number1 : gcd(number2, number1 % number2));
+  return roundDownNumber;
+};
 
-const generateRoundProperties = () => {
-  const multiplier = getRandomNumber(10);
-  const number1 = multiplier * getRandomNumber(10);
-  const number2 = multiplier * getRandomNumber(10);
+const findGCD = (firstNumber, secondNumber) => {
+  if (!secondNumber) {
+    return firstNumber;
+  }
+  return findGCD(secondNumber, firstNumber % secondNumber);
+};
 
-  return {
-    question: `${number1} ${number2}`,
-    correctAnswer: `${gcd(number1, number2)}`,
-  };
+const roundProperties = () => {
+  const commonMultiplier = getRandomNumber(10);
+  const firstNumber = commonMultiplier * getRandomNumber(10);
+  const secondNumber = commonMultiplier * getRandomNumber(10);
+
+  const question = `${firstNumber} ${secondNumber}`;
+  const correctAnswer = `${findGCD(firstNumber, secondNumber)}`;
+
+  return { question, correctAnswer };
 };
 
 export default () => {
-  game('Find the greatest common divisor of given numbers.', generateRoundProperties);
+  game('Find the greatest common divisor of given numbers.', roundProperties);
 };
