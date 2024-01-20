@@ -12,3 +12,6 @@ url: https://asciinema.org/a/JJWUbAK7rDvEzag9z0NEl0jjR
 
 ### asciinema brain-progression
 url: https://asciinema.org/a/WJnGEo0AoFRMNLWNjKyfnwwIJ
+
+### asciinema brain-prime
+url: https://asciinema.org/a/ZLKezQr3uYOGvwvZkylXjR04M
