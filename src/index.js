@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export default (textRules, roundProperties) => {
+export default (textRules, generateRoundProperties) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
@@ -10,7 +10,7 @@ export default (textRules, roundProperties) => {
 
   let countRounds = 0;
   while (countRounds !== 3) {
-    const { question, correctAnswer } = roundProperties();
+    const { question, correctAnswer } = generateRoundProperties();
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');

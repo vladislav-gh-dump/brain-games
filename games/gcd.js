@@ -15,7 +15,7 @@ const findGCD = (firstNumber, secondNumber) => {
   return findGCD(secondNumber, firstNumber % secondNumber);
 };
 
-const roundProperties = () => {
+const generateRoundProperties = () => {
   const commonMultiplier = getRandomNumber(10);
   const firstNumber = commonMultiplier * getRandomNumber(10);
   const secondNumber = commonMultiplier * getRandomNumber(10);
@@ -27,5 +27,5 @@ const roundProperties = () => {
 };
 
 export default () => {
-  game('Find the greatest common divisor of given numbers.', roundProperties);
+  game('Find the greatest common divisor of given numbers.', generateRoundProperties);
 };

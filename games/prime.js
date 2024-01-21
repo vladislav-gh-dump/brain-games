@@ -24,7 +24,7 @@ const isPrimeNumber = (number) => {
   return true;
 };
 
-const roundProperties = () => {
+const generateRoundProperties = () => {
   const firstNotPrimeNumber = 1;
   const number = firstNotPrimeNumber + getRandomNumber(10);
 
@@ -35,5 +35,5 @@ const roundProperties = () => {
 };
 
 export default () => {
-  game('Answer "yes" if given number is prime. Otherwise answer "no".', roundProperties);
+  game('Answer "yes" if given number is prime. Otherwise answer "no".', generateRoundProperties);
 };

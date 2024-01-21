@@ -24,7 +24,7 @@ const doCalculations = (firstNumber, secondNumber, operator) => {
   }
 };
 
-const roundProperties = () => {
+const generateRoundProperties = () => {
   const firstNumber = getRandomNumber(10);
   const secondNumber = getRandomNumber(10);
 
@@ -38,5 +38,5 @@ const roundProperties = () => {
 };
 
 export default () => {
-  game('What is the result of the expression?', roundProperties);
+  game('What is the result of the expression?', generateRoundProperties);
 };

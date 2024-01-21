@@ -20,7 +20,7 @@ const getProgressionNumbers = (lengthArray, firstNumber, differenceOfNumbers) =>
   return progressionNumbers;
 };
 
-const roundProperties = () => {
+const generateRoundProperties = () => {
   const firstNumber = getRandomNumber(30);
   const differenceOfNumbers = getRandomNumber(5);
 
@@ -36,5 +36,5 @@ const roundProperties = () => {
 };
 
 export default () => {
-  game('What number is missing in the progression?', roundProperties);
+  game('What number is missing in the progression?', generateRoundProperties);
 };

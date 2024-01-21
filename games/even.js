@@ -10,7 +10,7 @@ const getRandomNumber = (limitNumber) => {
 
 const isEvenNumber = (number) => (number % 2 === 0);
 
-const roundProperties = () => {
+const generateRoundProperties = () => {
   const number = getRandomNumber(50);
 
   const question = `${number}`;
@@ -20,5 +20,5 @@ const roundProperties = () => {
 };
 
 export default () => {
-  game('Answer "yes" if the number is even, otherwise answer "no".', roundProperties);
+  game('Answer "yes" if the number is even, otherwise answer "no".', generateRoundProperties);
 };
