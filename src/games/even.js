@@ -1,5 +1,5 @@
 import game from '../index.js';
-import getRandomNumber from '../utils/random-number.js';
+import getRandomNumber from '../utils.js';
 
 const isEvenNumber = (number) => (number % 2 === 0);
 
