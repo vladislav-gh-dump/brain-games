@@ -8,8 +8,7 @@ export default (textRules, generateRoundProperties) => {
 
   console.log(textRules);
 
-  let countRounds = 0;
-  while (countRounds !== 3) {
+  for (let countRound = 0; countRound < 3; countRound += 1) {
     const { question, correctAnswer } = generateRoundProperties();
 
     console.log(`Question: ${question}`);
@@ -20,7 +19,6 @@ export default (textRules, generateRoundProperties) => {
       console.log(`Let's try again, ${userName}!`);
       return;
     }
-    countRounds += 1;
     console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
