@@ -1,12 +1,5 @@
 import game from '../index.js';
-
-const getRandomNumber = (limitNumber) => {
-  const inclusiveLimitNumber = limitNumber + 1;
-  const randomNumber = Math.random() * inclusiveLimitNumber;
-  const roundDownNumber = Math.floor(randomNumber);
-
-  return roundDownNumber;
-};
+import getRandomNumber from '../utils/random-number.js';
 
 const isPrimeNumber = (number) => {
   const firstNotPrimeNumber = 1;
