@@ -55,28 +55,28 @@ npm link
 ```bash
 brain-calc
 ```
-![asciicast](https://asciinema.org/a/orq1RK9LJV4J58J0fo5HvmDHu.svg)
+[![asciicast](https://asciinema.org/a/orq1RK9LJV4J58J0fo5HvmDHu.svg)](https://asciinema.org/a/orq1RK9LJV4J58J0fo5HvmDHu)
 
 ### Прогрессия
 ```bash
 brain-progression
 ```
-![asciicast](https://asciinema.org/a/WJnGEo0AoFRMNLWNjKyfnwwIJ.svg)
+[![asciicast](https://asciinema.org/a/WJnGEo0AoFRMNLWNjKyfnwwIJ.svg)](https://asciinema.org/a/WJnGEo0AoFRMNLWNjKyfnwwIJ)
 
 ### Четное число
 ```bash
 brain-even
 ```
-![asciicast](https://asciinema.org/a/nM7rU6LVqmKNKRUFw8BwBAMsn.svg)
+[![asciicast](https://asciinema.org/a/nM7rU6LVqmKNKRUFw8BwBAMsn.svg)](https://asciinema.org/a/nM7rU6LVqmKNKRUFw8BwBAMsn)
 
 ### НОД
 ```bash
 brain-gcd
 ```
-![asciicast](https://asciinema.org/a/JJWUbAK7rDvEzag9z0NEl0jjR.svg)
+[![asciicast](https://asciinema.org/a/JJWUbAK7rDvEzag9z0NEl0jjR.svg)](https://asciinema.org/a/JJWUbAK7rDvEzag9z0NEl0jjR)
 
 ### Простое число
 ```bash
 brain-prime
 ```
-![asciicast](https://asciinema.org/a/ZLKezQr3uYOGvwvZkylXjR04M.svg)
+[![asciicast](https://asciinema.org/a/ZLKezQr3uYOGvwvZkylXjR04M.svg)](https://asciinema.org/a/ZLKezQr3uYOGvwvZkylXjR04M)
