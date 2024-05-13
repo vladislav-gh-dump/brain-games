@@ -3,7 +3,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/vladislav-gh-dump/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/vladislav-gh-dump/frontend-project-44/actions)
 
-Мой первый проект на Javascript - «Игры разума». Проект разработан в рамках обучения в [Hexlet](https://ru.hexlet.io/) на направлении [Frontend-разработчик](https://ru.hexlet.io/programs/frontend/).
+Мой первый проект - «Игры разума». Проект разработан в рамках обучения в [Hexlet](https://ru.hexlet.io/) на направлении [Frontend-разработчик](https://ru.hexlet.io/programs/frontend/).
 
 ## Описание
 **«Игры разума»** — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново. 
