@@ -3,8 +3,6 @@
 ### Tests and linter status:
 [![Actions Status](https://github.com/vladislav-gh-dump/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/vladislav-gh-dump/frontend-project-44/actions)
 
-Мой первый проект - «Игры разума».
-
 ## Описание
 **«Игры разума»** — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново. 
 
